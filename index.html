@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinamik Kelime Kartı | v3.3 (B Harfi) - Yeni Liste</title>
+    <title>Kelime Kartları | B Harfi - Güncel Liste</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -64,7 +64,7 @@
         /* Görsel Stilleri */
         .image-container {
             width: 100%;
-            height: 180px; /* Görsel sabit yüksekliği */
+            height: 200px;
             margin-bottom: 25px;
             overflow: hidden;
             border-radius: 15px;
@@ -79,7 +79,7 @@
             transition: transform 0.3s ease;
         }
         .card:hover .word-image {
-            transform: scale(1.05); /* Hover efekti */
+            transform: scale(1.05);
         }
 
         .box { 
@@ -109,7 +109,6 @@
             align-items: center;
             gap: 10px;
         }
-        
         .nav-hint { font-size: 12px; opacity: 0.6; margin-top: 5px;}
 
     </style>
@@ -124,7 +123,7 @@
     <div class="nav-hint">İpucu: Yön tuşlarını kullanabilirsiniz (← / →)</div>
 
     <script>
-        // İSTENİLEN YENİ KELİME LİSTESİ VE GÖRSELLERİ
+        // GÜNCELLENMİŞ KELİME LİSTESİ (B Harfi)
         const wordList = [
             { 
                 word: "bill", 
@@ -139,7 +138,7 @@
                 meaning: "kuş", 
                 example_en: "A [bird] is singing in the tree.", 
                 example_tr: "Ağaçta bir kuş ötüyor.", 
-                synonyms: "avian, fowl",
+                synonyms: "avian",
                 image_url: "https://images.pexels.com/photos/326900/pexels-photo-326900.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
@@ -163,7 +162,7 @@
                 meaning: "blog, internet günlüğü", 
                 example_en: "I write a travel [blog].", 
                 example_tr: "Bir seyahat bloğu yazıyorum.", 
-                synonyms: "weblog, online journal",
+                synonyms: "weblog",
                 image_url: "https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
@@ -171,7 +170,7 @@
                 meaning: "sarışın", 
                 example_en: "She has long [blonde] hair.", 
                 example_tr: "Uzun sarı saçları var.", 
-                synonyms: "fair-haired, light-haired",
+                synonyms: "fair-haired",
                 image_url: "https://images.pexels.com/photos/3060634/pexels-photo-3060634.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
@@ -179,7 +178,7 @@
                 meaning: "mavi", 
                 example_en: "The sky is very [blue] today.", 
                 example_tr: "Gökyüzü bugün çok mavi.", 
-                synonyms: "azure, cobalt",
+                synonyms: "azure",
                 image_url: "https://images.pexels.com/photos/2835436/pexels-photo-2835436.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
@@ -195,7 +194,7 @@
                 meaning: "vücut, beden", 
                 example_en: "Exercise is good for your [body].", 
                 example_tr: "Egzersiz vücudunuz için iyidir.", 
-                synonyms: "physique, figure",
+                synonyms: "physique",
                 image_url: "https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
@@ -211,12 +210,12 @@
                 meaning: "bot, çizme", 
                 example_en: "He put on his winter [boot]s.", 
                 example_tr: "Kışlık botlarını giydi.", 
-                synonyms: "footwear, shoe",
+                synonyms: "footwear",
                 image_url: "https://images.pexels.com/photos/267301/pexels-photo-267301.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
                 word: "bored", 
-                meaning: "sıkılmış", 
+                meaning: "sıkılmış (his)", 
                 example_en: "The children looked [bored].", 
                 example_tr: "Çocuklar sıkılmış görünüyordu.", 
                 synonyms: "uninterested, weary",
@@ -224,7 +223,7 @@
             },
             { 
                 word: "boring", 
-                meaning: "sıkıcı", 
+                meaning: "sıkıcı (durum/şey)", 
                 example_en: "The movie was very [boring].", 
                 example_tr: "Film çok sıkıcıydı.", 
                 synonyms: "dull, tedious",
@@ -235,14 +234,14 @@
                 meaning: "doğmuş, doğmak", 
                 example_en: "I was [born] in 1990.", 
                 example_tr: "1990 yılında doğdum.", 
-                synonyms: "birthed, originated",
+                synonyms: "originated",
                 image_url: "https://images.pexels.com/photos/3845458/pexels-photo-3845458.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
                 word: "both", 
                 meaning: "her ikisi de", 
-                example_en: "[Both] of them are my friends.", 
-                example_tr: "Onların her ikisi de arkadaşım.", 
+                example_en: "I like [both] colors.", 
+                example_tr: "Her iki rengi de severim.", 
                 synonyms: "the two",
                 image_url: "https://images.pexels.com/photos/1386608/pexels-photo-1386608.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
@@ -269,14 +268,6 @@
                 example_tr: "Erkek çocuk futbol oynuyor.", 
                 synonyms: "lad, young man",
                 image_url: "https://images.pexels.com/photos/1619697/pexels-photo-1619697.jpeg?auto=compress&cs=tinysrgb&w=600"
-            },
-            { 
-                word: "boyfriend", 
-                meaning: "erkek arkadaş (sevgili)", 
-                example_en: "She went to the cinema with her [boyfriend].", 
-                example_tr: "Erkek arkadaşıyla sinemaya gitti.", 
-                synonyms: "partner, beau",
-                image_url: "https://images.pexels.com/photos/1415131/pexels-photo-1415131.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
         ];
 
@@ -284,7 +275,7 @@
         const container = document.getElementById('card-container');
         const infoText = document.getElementById('info-text');
 
-        // Sesli Okuma Fonksiyonu
+        // Sesli Okuma
         function speakWord(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
@@ -300,6 +291,7 @@
         function createCard(data) {
             const { word, meaning, example_en, example_tr, synonyms, image_url } = data;
             
+            // Köşeli parantez yoksa kelimeyi bulup highlight yap
             let highlightedExample = example_en;
             if (example_en.includes('[')) {
                 highlightedExample = example_en
@@ -314,10 +306,9 @@
 
             const cardHTML = `
                 <div class="card" id="active-card" onclick="nextCard()">
-                    
                     ${image_url ? 
                         `<div class="image-container">
-                            <img src="${image_url}" class="word-image" alt="${word} kelimesi">
+                            <img src="${image_url}" class="word-image" alt="${word}">
                         </div>` 
                         : ''}
 
