@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelime Kartları | B Harfi - 20 Kelime Listesi v4 (Düzeltilmiş)</title>
+    <title>Kelime Kartları | B Harfi - Son Düzeltme</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Ana Stil */
+        /* --- STİL BAŞLANGIÇ --- */
         body {
             background-color: #f0f2f5;
             display: flex;
@@ -21,12 +21,11 @@
             user-select: none;
         }
 
-        /* Kartın Kendisi */
         .card {
             background-color: white;
             width: 350px;
             border-radius: 20px;
-            padding: 25px; /* Padding'i azalttım, 30px çok fazla yer kaplıyordu */
+            padding: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             position: relative;
             margin-top: 20px;
@@ -45,8 +44,7 @@
             transform: scale(0.98);
         }
 
-        /* Kart İçeriği Stilleri */
-        .header { margin-bottom: 15px; } /* Görselin üstüne taşındığı için margin azaldı */
+        .header { margin-bottom: 15px; }
         .word-row { display: flex; align-items: center; gap: 15px; }
         .speaker-icon { 
             color: #1976D2;
@@ -64,9 +62,8 @@
         /* Görsel Stilleri */
         .image-container {
             width: 100%;
-            height: 180px; /* Biraz daha kompakt bir yükseklik */
+            height: 180px;
             margin-bottom: 25px;
-            margin-top: 0; /* Kartın en üstüne yerleşti */
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -100,7 +97,6 @@
         .synonyms-text { color: #2D3748; margin: 0; font-size: 15px; }
         .box.small { padding: 12px 15px; border-radius: 30px; margin-bottom: 0;}
 
-        /* Navigator Bilgisi */
         .info-bar {
             color: #718096;
             margin-top: 20px;
@@ -111,7 +107,7 @@
             gap: 10px;
         }
         .nav-hint { font-size: 12px; opacity: 0.6; margin-top: 5px;}
-
+        /* --- STİL BİTİŞ --- */
     </style>
 </head>
 <body>
@@ -124,7 +120,8 @@
     <div class="nav-hint">İpucu: Yön tuşlarını kullanabilirsiniz (← / →)</div>
 
     <script>
-        // İYİLEŞTİRİLMİŞ KELİME LİSTESİ (18. kelime 'brain' ile değiştirildi, 20. kelimenin görseli güncellendi)
+        // --- JAVASCRIPT BAŞLANGIÇ ---
+        // KELİME LİSTESİNDE GÖRSEL URL'LERİ KONTROL EDİLMİŞTİR.
         const wordList = [
             { 
                 word: "bill", 
@@ -262,13 +259,13 @@
                 synonyms: "carton, case",
                 image_url: "https://images.pexels.com/photos/264787/pexels-photo-264787.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             },
-            { // 18. Kelime (Index 17) - terms yerine "brain" eklendi.
+            { 
                 word: "brain", 
                 meaning: "beyin", 
                 example_en: "The human [brain] is complex.", 
                 example_tr: "İnsan beyni karmaşıktır.", 
                 synonyms: "mind, intellect",
-                image_url: "https://images.pexels.com/photos/3760434/pexels-photo-3760434.jpeg?auto=compress&cs=tinysrgb&w=600" // Beyin görseli
+                image_url: "https://images.pexels.com/photos/3760434/pexels-photo-3760434.jpeg?auto=compress&cs=tinysrgb&w=600"
             },
             { 
                 word: "boy", 
@@ -284,7 +281,7 @@
                 example_en: "She introduced me to her [boyfriend].", 
                 example_tr: "Bana erkek arkadaşını tanıttı.", 
                 synonyms: "partner, beau",
-                image_url: "https://images.pexels.com/photos/10780218/pexels-photo-10780218.jpeg?auto=compress&cs=tinysrgb&w=600" // GÜNCELLENMİŞ GÖRSEL
+                image_url: "https://images.pexels.com/photos/10780218/pexels-photo-10780218.jpeg?auto=compress&cs=tinysrgb&w=600"
             }
         ];
 
@@ -310,8 +307,8 @@
         function createCard(data) {
             const { word, meaning, example_en, example_tr, synonyms, image_url } = data;
             
-            // YALNIZCA KÖŞELİ PARANTEZ İÇİNDEKİ KELİMEYİ VURGULA
-            let highlightedExample = example_en.replace(/\[(.*?)\]/g, (match, p1) => `<span class="highlight">${p1}</span>`);
+            // Köşeli parantez içindeki kelimeyi vurgula
+            const highlightedExample = example_en.replace(/\[(.*?)\]/g, (match, p1) => `<span class="highlight">${p1}</span>`);
             
             const synonymsText = synonyms || '-';
 
@@ -355,6 +352,7 @@
             
             container.innerHTML = cardHTML;
             
+            // Animasyon için active sınıfını ekleme
             setTimeout(() => {
                 const card = document.getElementById('active-card');
                 if(card) card.classList.add('active');
@@ -367,12 +365,11 @@
             infoText.textContent = `Kart ${currentIndex + 1} / ${wordList.length}`;
         }
 
-        // Genel global fonksiyon olarak tutuldu
+        // Kartları ilerletme (Sağ ok, Boşluk, Tıklama)
         window.nextCard = function() {
             const activeCard = document.getElementById('active-card');
             if (activeCard) {
                 activeCard.classList.remove('active');
-                // Kartın hafifçe kaybolma ve dönme efekti eklendi
                 activeCard.style.transform = 'translateY(10px) rotate(2deg)'; 
                 activeCard.style.opacity = '0';
             }
@@ -383,11 +380,11 @@
             }, 300); 
         }
         
+        // Kartları geri alma (Sol ok)
         function prevCard() {
             const activeCard = document.getElementById('active-card');
             if (activeCard) {
                 activeCard.classList.remove('active');
-                // Kartın hafifçe kaybolma ve dönme efekti eklendi
                 activeCard.style.transform = 'translateY(10px) rotate(-2deg)';
                 activeCard.style.opacity = '0';
             }
@@ -405,12 +402,11 @@
             } else if (e.key === 'ArrowLeft') {
                 prevCard();
             } else if (e.key === 'ArrowUp') {
-                // Mevcut kartın kelimesini okur
                 speakWord(wordList[currentIndex].word);
             }
         });
 
-        // Başlangıç
+        // Sayfa Yüklendiğinde Başlatma
         window.onload = function() {
             if (wordList.length > 0) {
                 createCard(wordList[currentIndex]);
@@ -418,6 +414,7 @@
                 container.innerHTML = '<h2>Liste boş.</h2>';
             }
         };
+        // --- JAVASCRIPT BİTİŞ ---
     </script>
 </body>
 </html>
