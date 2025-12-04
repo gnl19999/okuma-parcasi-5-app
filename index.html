@@ -123,7 +123,7 @@
     <div class="nav-hint">İpucu: Yön tuşlarını kullanabilirsiniz (← / →)</div>
 
     <script>
-        // GÜNCELLENMİŞ KELİME LİSTESİ (20. kelimenin görseli düzeltildi)
+        // GÜNCELLENMİŞ KELİME LİSTESİ (20. kelimenin görseli kesin olarak düzeltildi)
         const wordList = [
             { 
                 word: "bill", 
@@ -283,7 +283,7 @@
                 example_en: "She introduced me to her [boyfriend].", 
                 example_tr: "Bana erkek arkadaşını tanıttı.", 
                 synonyms: "partner, beau",
-                image_url: "https://images.pexels.com/photos/10780218/pexels-photo-10780218.jpeg?auto=compress&cs=tinysrgb&w=600" // Yeni, çalışan görsel URL'si
+                image_url: "https://images.pexels.com/photos/10780218/pexels-photo-10780218.jpeg?auto=compress&cs=tinysrgb&w=600" // YENİ VE ÇALIŞAN GÖRSEL
             }
         ];
 
@@ -309,16 +309,16 @@
         function createCard(data) {
             const { word, meaning, example_en, example_tr, synonyms, image_url } = data;
             
-            // Dinamik Highlight: Köşeli parantez içindekini veya kelimenin herhangi bir formunu (büyük/küçük harf duyarsız) bulur ve highlight yapar.
+            // Dinamik Highlight: Köşeli parantez içindekini bulur ve highlight yapar.
             let highlightedExample = example_en;
 
-            // 1. Önce köşeli parantez içindeki kelimeyi bulup değiştir. Bu, varyantları (boots, boys vb.) kolayca yakalamayı sağlar.
+            // Köşeli parantez içindeki kelimeyi bulup highlight yap. (boot -> [boot]s gibi varyasyonları kapsar.)
             const bracketRegex = /\[(.*?)\]/g;
             highlightedExample = highlightedExample.replace(bracketRegex, (match, p1) => `<span class="highlight">${p1}</span>`);
             
-            // 2. Köşeli parantez yoksa veya kelime highlight edilmemişse, kelimenin kendisini (büyük/küçük harf duyarsız) bul ve highlight yap.
+            // Köşeli parantez kullanılmadıysa, kelimenin kendisini (büyük/küçük harf duyarsız) bul ve highlight yap.
             if (!example_en.includes('[')) {
-                const wordRegex = new RegExp(`\\b${word}\\b`, 'gi'); // \b: tam kelime eşleşmesi
+                const wordRegex = new RegExp(`\\b${word}\\b`, 'gi'); 
                 highlightedExample = example_en.replace(wordRegex, (match) => `<span class="highlight">${match}</span>`);
             }
 
@@ -376,7 +376,8 @@
             infoText.textContent = `Kart ${currentIndex + 1} / ${wordList.length}`;
         }
 
-        function nextCard() {
+        // Genel global fonksiyon olarak tutuldu
+        window.nextCard = function() {
             const activeCard = document.getElementById('active-card');
             if (activeCard) {
                 activeCard.classList.remove('active');
