@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinamik Kelime Kartı | v3.3 (Yeni Liste) - Görselli</title>
+    <title>Dinamik Kelime Kartı | v3.3 (Düzeltilmiş Yeni Liste) - Görselli</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -123,158 +123,158 @@
     <div class="nav-hint">İpucu: Yön tuşlarını kullanabilirsiniz (← / →)</div>
 
     <script>
-        // YENİ KELİME LİSTESİ VE GÖRSEL URL'LERİ
+        // DÜZELTİLMİŞ YENİ KELİME LİSTESİ VE GÖRSEL URL'LERİ
         const wordList = [
             { 
                 word: "bill", 
-                meaning: "fatura, hesap", 
-                example_en: "Can I get the [bill], please?", 
-                example_tr: "Hesabı alabilir miyim, lütfen?", 
-                synonyms: "invoice, check",
+                meaning: "fatura, hesap (ayrıca: kanun teklifi, gaga)", 
+                example_en: "The waiter brought the [bill] after the meal.", 
+                example_tr: "Garson yemekten sonra faturayı getirdi.", 
+                synonyms: "invoice, receipt, check",
                 image_url: "https://images.pexels.com/photos/10186358/pexels-photo-10186358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "bird", 
                 meaning: "kuş", 
-                example_en: "A colorful [bird] landed on the tree.", 
-                example_tr: "Ağaca renkli bir kuş kondu.", 
-                synonyms: "avian, flyer",
+                example_en: "I saw a tropical [bird] with bright blue feathers.", 
+                example_tr: "Parlak mavi tüyleri olan tropikal bir kuş gördüm.", 
+                synonyms: "fowler, flyer",
                 image_url: "https://images.pexels.com/photos/13597375/pexels-photo-13597375.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "birthday", 
                 meaning: "doğum günü", 
-                example_en: "My [birthday] is next month.", 
-                example_tr: "Doğum günüm gelecek ay.", 
-                synonyms: "anniversary, nativity",
+                example_en: "She threw a big party for her 30th [birthday].", 
+                example_tr: "30. doğum günü için büyük bir parti verdi.", 
+                synonyms: "anniversary",
                 image_url: "https://images.pexels.com/photos/17260029/pexels-photo-17260029/free-photo-of-pasta-dogum-gunu-masa-mum.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "black", 
                 meaning: "siyah, kara", 
-                example_en: "She wore a [black] dress.", 
-                example_tr: "Siyah bir elbise giydi.", 
-                synonyms: "dark, jet",
+                example_en: "The cat has a coat of shiny [black] fur.", 
+                example_tr: "Kedinin parlak siyah bir kürkü var.", 
+                synonyms: "dark, ebony",
                 image_url: "https://images.pexels.com/photos/19616013/pexels-photo-19616013/free-photo-of-siyah-elbise-giyen-kadin.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "blog", 
                 meaning: "blog, internet günlüğü", 
-                example_en: "I write for a technology [blog].", 
-                example_tr: "Bir teknoloji blogu için yazıyorum.", 
-                synonyms: "weblog, journal",
+                example_en: "She posts recipes on her food [blog] every week.", 
+                example_tr: "Her hafta yemek blogunda tarifler yayınlıyor.", 
+                synonyms: "weblog, online journal",
                 image_url: "https://images.pexels.com/photos/3163893/pexels-photo-3163893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "blonde", 
-                meaning: "sarışın", 
-                example_en: "The baby has naturally [blonde] hair.", 
-                example_tr: "Bebeğin doğal sarı saçları var.", 
+                meaning: "sarışın (saç)", 
+                example_en: "Many people dye their hair [blonde] in the summer.", 
+                example_tr: "Birçok kişi yazın saçını sarıya boyar.", 
                 synonyms: "fair-haired, light-haired",
                 image_url: "https://images.pexels.com/photos/3483017/pexels-photo-3483017.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "blue", 
                 meaning: "mavi", 
-                example_en: "The sky is a clear [blue] today.", 
-                example_tr: "Gökyüzü bugün masmavi.", 
-                synonyms: "azure, sapphire",
+                example_en: "The Mediterranean Sea is famous for its deep [blue] color.", 
+                example_tr: "Akdeniz, derin mavi rengiyle ünlüdür.", 
+                synonyms: "azure, sapphire, indigo",
                 image_url: "https://images.pexels.com/photos/15839958/pexels-photo-15839958/free-photo-of-manzara-bulut-mavi-gokyuzu.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "boat", 
                 meaning: "tekne, sandal", 
-                example_en: "We took a small [boat] out on the lake.", 
-                example_tr: "Gölde küçük bir tekneyle dolaştık.", 
-                synonyms: "vessel, ship",
+                example_en: "We rented a small fishing [boat] for the day.", 
+                example_tr: "Gün için küçük bir balıkçı teknesi kiraladık.", 
+                synonyms: "vessel, ship, yacht",
                 image_url: "https://images.pexels.com/photos/12338162/pexels-photo-12338162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "body", 
                 meaning: "vücut, beden", 
-                example_en: "Exercise is good for the [body] and mind.", 
-                example_tr: "Egzersiz vücut ve zihin için iyidir.", 
-                synonyms: "physique, figure",
+                example_en: "Drinking enough water is vital for your [body].", 
+                example_tr: "Yeterli su içmek vücudunuz için hayati önem taşır.", 
+                synonyms: "physique, figure, trunk",
                 image_url: "https://images.pexels.com/photos/17208460/pexels-photo-17208460/free-photo-of-disko-adam-gokyuzu-gunduz.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "book", 
-                meaning: "kitap", 
-                example_en: "I read a fantastic [book] yesterday.", 
-                example_tr: "Dün harika bir kitap okudum.", 
-                synonyms: "volume, novel",
+                meaning: "kitap (ayrıca: rezervasyon yapmak)", 
+                example_en: "Don't forget to [book] the flight tickets early.", 
+                example_tr: "Uçak biletlerini erken ayırtmayı unutma.", 
+                synonyms: "novel, volume, reserve",
                 image_url: "https://images.pexels.com/photos/4049870/pexels-photo-4049870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "boot", 
-                meaning: "bot, çizme", 
-                example_en: "I bought new winter [boots].", 
-                example_tr: "Yeni kışlık botlar aldım.", 
-                synonyms: "shoe, footwear",
+                meaning: "bot, çizme (ayrıca: bagaj - İngiliz İngilizcesi)", 
+                example_en: "I keep a spare tire in the [boot] of my car.", 
+                example_tr: "Arabamın bagajında yedek lastik tutarım.", 
+                synonyms: "shoe, wellington, trunk (car)",
                 image_url: "https://images.pexels.com/photos/20320984/pexels-photo-20320984/free-photo-of-spor-ayakkabilar-botlar.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "bored", 
-                meaning: "canı sıkılmış", 
-                example_en: "I was [bored] during the long wait.", 
-                example_tr: "Uzun bekleyiş sırasında canım sıkıldı.", 
-                synonyms: "uninterested, weary",
+                meaning: "canı sıkılmış, sıkılan (kişi)", 
+                example_en: "I felt so [bored] that I decided to clean the house.", 
+                example_tr: "O kadar canım sıkıldı ki evi temizlemeye karar verdim.", 
+                synonyms: "uninterested, weary, fed up",
                 image_url: "https://images.pexels.com/photos/5697334/pexels-photo-5697334.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "boring", 
-                meaning: "sıkıcı", 
-                example_en: "The movie was really [boring].", 
-                example_tr: "Film gerçekten sıkıcıydı.", 
-                synonyms: "dull, monotonous",
+                meaning: "sıkıcı (şey/durum)", 
+                example_en: "Watching paint dry is less [boring] than this meeting.", 
+                example_tr: "Boya kurumasını izlemek bile bu toplantıdan daha az sıkıcı.", 
+                synonyms: "dull, monotonous, tedious",
                 image_url: "https://images.pexels.com/photos/10186355/pexels-photo-10186355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "born", 
-                meaning: "doğmak", 
-                example_en: "I was [born] in Istanbul.", 
-                example_tr: "İstanbul'da doğdum.", 
+                meaning: "doğmak (fiilin 3. hali)", 
+                example_en: "She was [born] with an incredible talent for music.", 
+                example_tr: "İnanılmaz bir müzik yeteneğiyle doğdu.", 
                 synonyms: "delivered, brought into life",
                 image_url: "https://images.pexels.com/photos/18485609/pexels-photo-18485609/free-photo-of-yeni-dogmus-bebek.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "both", 
                 meaning: "her ikisi de", 
-                example_en: "[Both] of them are coming to the party.", 
-                example_tr: "İkisi de partiye geliyor.", 
+                example_en: "I like [both] tea and coffee equally.", 
+                example_tr: "Hem çayı hem de kahveyi eşit derecede severim.", 
                 synonyms: "the two, equally",
                 image_url: "https://images.pexels.com/photos/17700078/pexels-photo-17700078/free-photo-of-el-tutmak.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "bottle", 
                 meaning: "şişe", 
-                example_en: "She filled the [bottle] with water.", 
-                example_tr: "Şişeyi suyla doldurdu.", 
-                synonyms: "flask, carafe",
+                example_en: "Can you pass me that glass [bottle] of milk?", 
+                example_tr: "Bana o cam süt şişesini uzatır mısın?", 
+                synonyms: "flask, container",
                 image_url: "https://images.pexels.com/photos/19597354/pexels-photo-19597354/free-photo-of-su-sisesi.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "box", 
-                meaning: "kutu", 
-                example_en: "I put the gift in a colorful [box].", 
-                example_tr: "Hediyeyi renkli bir kutuya koydum.", 
-                synonyms: "carton, container",
+                meaning: "kutu, sandık", 
+                example_en: "Be careful; there are fragile items in the [box].", 
+                example_tr: "Dikkatli ol; kutunun içinde kırılabilir eşyalar var.", 
+                synonyms: "carton, crate, container",
                 image_url: "https://images.pexels.com/photos/20857976/pexels-photo-20857976/free-photo-of-kutu-kapak-kumas-ahsap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "boy", 
                 meaning: "erkek çocuk", 
-                example_en: "The little [boy] was playing with a toy car.", 
-                example_tr: "Küçük erkek çocuk oyuncak bir arabayla oynuyordu.", 
-                synonyms: "lad, youngster",
+                example_en: "The teenager is now a young man, not a little [boy].", 
+                example_tr: "Genç, artık küçük bir erkek çocuk değil, genç bir adam.", 
+                synonyms: "lad, youngster, youth",
                 image_url: "https://images.pexels.com/photos/1681781/pexels-photo-1681781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             },
             { 
                 word: "boyfriend", 
-                meaning: "erkek arkadaş", 
-                example_en: "She went to the concert with her [boyfriend].", 
-                example_tr: "Konsere erkek arkadaşıyla gitti.", 
-                synonyms: "partner, beau",
+                meaning: "erkek arkadaş (sevgili)", 
+                example_en: "She introduced her new [boyfriend] to her family.", 
+                example_tr: "Yeni erkek arkadaşını ailesiyle tanıştırdı.", 
+                synonyms: "partner, beau, significant other",
                 image_url: "https://images.pexels.com/photos/17277258/pexels-photo-17277258/free-photo-of-gulus-erkek-arkadas-kiz-arkadas-ask.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             }
         ];
